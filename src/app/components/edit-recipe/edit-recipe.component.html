@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Editar Receita</h1>
+<mat-dialog-content [formGroup]="form">
+  <app-input [label]="'Nome da receita'" [control]="recipeName"></app-input>
+  <app-input [label]="'Ingredientes'" [control]="ingredients"></app-input>
+  <app-input
+    [label]="'Modo de preparo'"
+    [control]="preparationMethod"
+  ></app-input>
+  <app-input
+    [label]="'Tempo de preparo'"
+    [control]="preparationTime"
+  ></app-input>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Categoria</mat-label>
+    <mat-select
+      multiple
+      [value]="form.value.categories"
+      (selectionChange)="onCategoryChange($event.value)"
+      >
+      <mat-option *ngFor="let cat of categories" [value]="cat">
+        {{ cat }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button color="primary" (click)="save()">Salvar</button>
+</mat-dialog-actions>

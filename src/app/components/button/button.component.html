@@ -1,0 +1,18 @@
+<button
+  mat-flat-button
+  (mouseenter)="isHover = true"
+  (mouseleave)="isHover = false"
+  [ngStyle]=" outlined ?{
+    'border': '1px solid' + color,
+    'color': isHover ? '#fff' : color,
+    'background-color': isHover ? color : '#fff',
+  }: {
+    'background-color': color,
+    'color': '#fff',
+  }"
+  [disabled]="disabled"
+  [type]="type"
+  (click)="onClick()"
+  class="full-width-button">
+  {{ text }}
+</button>

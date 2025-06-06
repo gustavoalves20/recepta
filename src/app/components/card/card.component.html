@@ -1,0 +1,15 @@
+<mat-card>
+  <div class="stat-top" *ngIf="header">
+    <h3>{{ value }}</h3>
+    <p>{{ label }}</p>
+  </div>
+    <div class="card-content">
+      <ng-content></ng-content>
+    </div>
+  <div class="stat-bottom" *ngIf="footer">
+    <div class="icon">
+      <mat-icon class="icon-left">{{ icon }}</mat-icon>
+    </div>
+    <mat-icon>query_stats</mat-icon>
+  </div>
+</mat-card>

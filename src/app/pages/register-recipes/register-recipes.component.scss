@@ -1,0 +1,32 @@
+.recipe-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 20px;
+
+  .form-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .full {
+    grid-column: span 1;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  label {
+    font-weight: 600;
+  }
+}
+
+mat-card-title {
+  font-weight: 600;
+  font-size: 20px;
+}

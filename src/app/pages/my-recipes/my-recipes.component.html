@@ -1,0 +1,7 @@
+<app-recipe-table
+  [dataRecipe]="recipes"
+  [showAuthorInfo]="false"
+  (onView)="openDetails($event)"
+  (onEdit)="editRecipe($event)"
+  (onDelete)="deleteRecipe($event)"
+></app-recipe-table>

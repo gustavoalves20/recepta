@@ -1,0 +1,7 @@
+@use '@angular/material' as mat;
+
+:root {
+  @include mat.divider-overrides((
+    color :#E2E9F7,
+  ));
+}

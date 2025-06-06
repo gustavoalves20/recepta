@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+
+:root {
+  @include mat.menu-overrides((
+    container-color: white,
+    divider-color: #E2E9F7,
+  ));
+}

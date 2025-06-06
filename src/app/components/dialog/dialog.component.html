@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Receita: {{ data.recipeName }}</h1>
+<mat-dialog-content>
+  <h4>Ingredientes</h4>
+  <p>{{ data.ingredients }}</p>
+  <h4>Modo de preparo</h4>
+  <p>{{ data.preparationMethod }}</p>
+  <h4>Tempo de preparo</h4>
+  <p>{{ data.preparationTime }}</p>
+  <h4>Categoria</h4>
+  <p>{{ data.categories }}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Fechar</button>
+</mat-dialog-actions>

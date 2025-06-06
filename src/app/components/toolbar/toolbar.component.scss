@@ -1,0 +1,75 @@
+.toolbar {
+  height: 80px;
+  border-bottom: 1px solid #D5DBE7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.profile-button {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 6px;
+  background-color: white;
+  border: 1px solid #667797;
+  height: 50px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+}
+
+.custom-menu-panel {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.menu-content {
+  width: 100%;
+  padding: 20px;
+}
+
+.menu-header {
+  display: flex;
+  padding: 16px;
+  gap: 12px;
+}
+
+.menu-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.menu-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
+  margin: 0;
+}
+
+.user-email {
+  font-size: 13px;
+  color: #7a7a7a;
+  margin: 0;
+}
+
+.mat-menu-item {
+  padding: 12px 20px;
+}
+
+.logout {
+  border-radius: 7px;
+}
+

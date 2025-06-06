@@ -1,0 +1,38 @@
+<section class="auth-container">
+  <div class="auth-left">
+    <img src="assets/images/login.png" alt="background" />
+  </div>
+  <div class="auth-right">
+    <div class="form-container">
+      <div class="logo-login">
+        <mat-icon fontSet="">local_fire_department</mat-icon>
+        <h1>Recepta</h1>
+      </div>
+      <h1>Bem vindo de volta! 👋</h1>
+      <p>Por favor entre na sua conta e boas receitas</p>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+        <label>Email</label>
+        <app-input
+          icon="mail"
+          type="email"
+          placeholder="Digite seu email"
+          [control]="email"
+        ></app-input>
+        <label>Senha</label>
+        <app-input
+          icon="password"
+          type="password"
+          placeholder="Digite sua senha"
+          [control]="password"
+        ></app-input>
+        <div class="form-options">
+          <mat-checkbox>Lembrar-me</mat-checkbox>
+          <a class="forgot-link" href="#">Esqueceu a senha?</a>
+        </div>
+        <app-button [text]="'Entrar'" [color]="'000'" type="submit"></app-button>
+      </form>
+      <div class="create-account">Novo na plataforma? <a routerLink="/register">Crie uma conta</a>
+      </div>
+    </div>
+  </div>
+</section>

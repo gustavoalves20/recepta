@@ -1,0 +1,23 @@
+<mat-toolbar class="toolbar">
+  <h1>Bem-vindo de volta, {{ user?.name }}</h1>
+  <button mat-button class="profile-button" [matMenuTriggerFor]="profileMenu">
+  <img src="assets/images/perfil.png" class="avatar" />
+  <mat-icon>expand_more</mat-icon>
+</button>
+<mat-menu #profileMenu="matMenu" panelClass="custom-menu-panel">
+  <div class="menu-content">
+    <div class="menu-header">
+      <img src="assets/images/perfil.png" class="menu-avatar" />
+      <div class="menu-user-info">
+        <p class="user-name">{{ user?.name }}</p>
+        <p class="user-email">{{ user?.email }}</p>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <button mat-menu-item class="logout" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Sair</span>
+    </button>
+  </div>
+</mat-menu>
+</mat-toolbar>

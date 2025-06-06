@@ -1,0 +1,74 @@
+<div class="container-table">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox></mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox></mat-checkbox>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="author">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Autor</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="user-cell">
+          <img src="assets/images/perfil.png" class="user-avatar" />
+          {{ element.name | titlecase }}
+        </div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+    <ng-container matColumnDef="recipeName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Receita</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.recipeName | recipes }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="preparationTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Tempo de preparo
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.preparationTime | recipes  }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="details">
+      <th mat-header-cell *matHeaderCellDef>Detalhes</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button class="view-more-btn" (click)="emitRecipe(element)">
+          Ver mais
+        </button>
+      </td>
+    </ng-container>
+    <ng-container *ngIf="!showAuthorInfo" matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="onEdit.emit(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="primary"
+          (click)="onDelete.emit(element)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5]"
+    [showFirstLastButtons]="true"
+    aria-label="Selecione a página da tabela de receitas"
+    class="paginator"
+  >
+  </mat-paginator>
+  <mat-error *ngIf="dataSource.data.length === 0"
+    >Nenhuma receita encontrada</mat-error
+  >
+</div>

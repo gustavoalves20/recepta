@@ -1,0 +1,32 @@
+
+@use '@angular/material' as mat;
+@use './app/theme/form-field-theme.scss';
+@use './app/theme/snack-bar.theme.scss';
+@use './app/theme/table.theme.scss';
+@use './app/theme/divider.theme.scss';
+@use './app/theme/select.theme.scss';
+@use './app/theme/dialog.theme.scss';
+@use './app/theme/menu.theme.scss';
+@use './app/theme/toolbar.theme.scss';
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    density: -2,
+  ));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E2E9F7;
+  font-family: 'Poppins', sans-serif;
+}

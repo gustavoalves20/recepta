@@ -1,0 +1,45 @@
+<app-card>
+  <mat-card-title>Detalhes da Receita</mat-card-title>
+  <form [formGroup]="recipeForm" class="recipe-form-grid" (ngSubmit)="onSubmit()">
+    <div class="form-col full">
+      <label>Nome da receita</label>
+      <app-input
+        [icon]="'restaurant_menu'"
+        [placeholder]="'Digite o nome da receita'"
+        [control]="recipeName">
+      </app-input>
+    </div>
+    <div class="form-col">
+      <label>Ingredientes</label>
+      <app-input
+        [icon]="'receipt'"
+        [placeholder]="'Liste os ingredientes'"
+        [control]="ingredients">
+      </app-input>
+    </div>
+    <div class="form-col">
+      <label>Modo de preparo</label>
+      <app-input
+        [icon]="'description'"
+        [placeholder]="'Descreva o modo de preparo'"
+        [control]="preparationMethod">
+      </app-input>
+    </div>
+    <div class="form-col">
+      <label>Tempo de preparo</label>
+      <app-input
+        [icon]="'timer'"
+        [placeholder]="'Ex: 45 minutos'"
+        [control]="preparationTime">
+      </app-input>
+    </div>
+    <div class="form-col">
+      <label>Categoria</label>
+      <app-select-multiple [categories]="categories" [control]="categoriesControl"></app-select-multiple>
+    </div>
+    <div class="form-col actions">
+      <app-button [text]="'Cancelar'" [color]="'#005cbb'" [outlined]="true" (click)="cancel()"></app-button>
+      <app-button [text]="'Cadastrar'" [color]="'#005cbb'" type="submit"></app-button>
+    </div>
+  </form>
+</app-card>

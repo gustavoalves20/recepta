@@ -1,0 +1,42 @@
+<section class="auth-container">
+  <div class="auth-left">
+    <img src="assets/images/register.png" alt="background" />
+  </div>
+  <div class="auth-right">
+    <div class="form-container">
+      <div class="logo-login">
+        <mat-icon fontSet="">local_fire_department</mat-icon>
+        <h1>Recepta</h1>
+      </div>
+      <h1>Criar conta</h1>
+      <p>Por favor cadastre-se para acessar receitas incríveis</p>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+        <label class="label">Nome</label>
+        <app-input
+          icon="person"
+          placeholder="Digite seu email"
+          [control]="name"
+          errorMessage="O nome é obrigatório"
+        ></app-input>
+        <label class="label">Email</label>
+        <app-input
+          icon="mail"
+          placeholder="Digite seu email"
+          [control]="email"
+          errorMessage="O email é obrigatório"
+        ></app-input>
+        <label class="label">Senha</label>
+        <app-input
+          icon="password"
+          type="password"
+          placeholder="Digite sua senha"
+          [control]="password"
+          errorMessage="A senha é obrigatória"
+        ></app-input>
+        <button mat-flat-button color="primary" class="full-width-button">Cadastrar-se</button>
+      </form>
+      <div class="create-account">Já tem uma conta? <a routerLink="/login">Entrar</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<div class="content-top">
+  <app-card
+    [header]="true"
+    [footer]="true"
+    [label]="'Categorias Disponíveis'"
+    [value]="totalCategories"
+    [icon]="'category'"
+  ></app-card>
+  <app-card
+    [header]="true"
+    [footer]="true"
+    [label]="'Receitas cadastradas'"
+    [value]="totalRecipes"
+    [icon]="'restaurant'"
+  ></app-card>
+</div>
+<div class="container-filter">
+  <div class="filter-category">
+    <label>Categorias: </label>
+    <app-select
+      [categories]="categories"
+      [(selected)]="categorySelected"
+      (categoryChange)="onCategoryChange()"
+      class="input-filter"
+    ></app-select>
+  </div>
+</div>
+<app-recipe-table
+  [dataRecipe]="userRecipes"
+  [showAuthorInfo]="true"
+  (onView)="openDetails($event)"
+  [showAuthorInfo]="true"
+></app-recipe-table>

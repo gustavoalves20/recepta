@@ -1,0 +1,138 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #fff;
+  border-right: 1px solid #D5DBE7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  padding-left: 33px;
+  margin: 20px 0;
+}
+
+.logo h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.mat-icon-color {
+  color: #005cbb;
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.nav-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 90%;
+  border-radius: 7px;
+  padding: 10px 12px;
+  transition: background-color 0.3s ease;
+  color: black;
+
+  .icon-home, a {
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: #005cbb;
+    
+    .icon-home, a {
+      color: white;
+    }
+  }
+}
+
+.icon-home:hover {
+  color: #005cbb;
+}
+
+.menu-header {
+  width: 90%;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: background-color 0.3s ease;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-header:hover {
+  background-color: #005cbb;;
+}
+
+.menu-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-label {
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.menu-header {
+  color: black;
+}
+
+.menu-header:hover .expand-icon {
+  color: white;
+}
+
+.menu-header:hover .icon-recipe,
+.menu-header:hover .menu-label {
+  color: white;
+}
+
+.submenu {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+.submenu-link {
+  font-size: 14px;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+}
+
+.submenu-link:hover {
+  color: #005cbb;
+}
+
+.menu-header.active {
+  background-color: #005cbb;
+  color: white;
+}
+
+.active-submenu {
+  font-weight: bold;
+  color: #005cbb;
+}

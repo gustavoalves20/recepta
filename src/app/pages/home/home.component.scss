@@ -1,0 +1,16 @@
+.content-top {
+  display: flex;
+  gap: 25px;
+}
+
+app-card {
+  width: 270px;
+  font-weight: 600;
+}
+
+.container-filter {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-wrap: wrap;
+}
