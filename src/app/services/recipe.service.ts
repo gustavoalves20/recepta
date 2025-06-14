@@ -22,7 +22,10 @@ export class RecipeService {
   }
 
   updateRecipe(id: string, recipeData: Partial<Recipe>): Observable<Recipe> {
-    return this._httpClient.put<Recipe>(`${this._recipesUrl}/${id}`, recipeData);
+    return this._httpClient.put<Recipe>(
+      `${this._recipesUrl}/${id}`,
+      recipeData
+    );
   }
 
   deleteRecipe(id: string): Observable<void> {
@@ -31,14 +34,16 @@ export class RecipeService {
 
   getRecipesByCategory(category: string): Observable<RecipeResponse[]> {
     let params = new HttpParams().set('category', category);
-    return this._httpClient.get<RecipeResponse[]>(this._recipesBycategory, { params });
+    return this._httpClient.get<RecipeResponse[]>(this._recipesBycategory, {
+      params,
+    });
   }
 
   getRecipesByUser(userId: string): Observable<Recipe[]> {
-    return this._httpClient.get<Recipe[]>(`/users/${userId}/recipes`)
+    return this._httpClient.get<Recipe[]>(`/users/${userId}/recipes`);
   }
 
   getUsersWithTheirRecipes(): Observable<UserWithRecipes[]> {
-  return this._httpClient.get<UserWithRecipes[]>(this._recipesUrl);
-}
+    return this._httpClient.get<UserWithRecipes[]>(this._recipesUrl);
+  }
 }

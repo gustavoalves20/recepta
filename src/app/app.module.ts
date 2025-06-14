@@ -9,7 +9,7 @@ import { PagesModule } from './pages/pages.module';
 import { provideHttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorIntl } from '@angular/material/paginator';
-import { CustomPaginator } from './utils/customPaginator';
+import { CustomPaginator } from './utils/custom-paginator';
 
 @NgModule({
   declarations: [AppComponent],

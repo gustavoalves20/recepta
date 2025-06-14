@@ -66,7 +66,6 @@ export class RecipeTableComponent {
   }
 
   ngOnChanges(): void {
-    console.log('ngOnChanges — dataRecipe:', this.dataRecipe);
     this.dataSource.data = this.dataRecipe;
 
     if (this.sort) {

@@ -88,7 +88,7 @@ export class HomeComponent {
     });
   }
 
-  loadCategoryService() {
+  loadCategoryService(): void {
     this._categoryService.getCategories().subscribe({
       next: (data) => {
         this.categories = data.map((cat) => cat.name);
@@ -103,11 +103,9 @@ export class HomeComponent {
     });
   }
 
-  loadUserWithRecipes() {
+  loadUserWithRecipes(): void {
     this._recipesService.getUsersWithTheirRecipes().subscribe({
       next: (data) => {
-        console.log('API response:', data);
-
         const flattened = data
           .filter((user) => !!user.recipe)
           .map((user) => ({
@@ -121,8 +119,6 @@ export class HomeComponent {
             name: user.name,
             email: user.email,
           }));
-
-        console.log('Flattened:', flattened);
 
         this.userRecipes = [...flattened];
         this.totalRecipes = flattened.length;

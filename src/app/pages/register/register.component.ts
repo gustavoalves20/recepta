@@ -47,8 +47,8 @@ export class RegisterComponent {
 
     this._authService.register(this.name.value, this.email.value, this.password.value).subscribe({
         next: () => {
-          SnackBarHelper.showMessage(this._snackBar, 'Cadastro realizado com sucesso');
           this._router.navigate(['/login']);
+          SnackBarHelper.showMessage(this._snackBar, 'Cadastro realizado com sucesso');
         },
         error: (error) => {
           if (error.message === 'Este email já está cadastrado') {
